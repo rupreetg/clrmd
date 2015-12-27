@@ -412,10 +412,10 @@ namespace Microsoft.Diagnostics.Runtime.Desktop
 
                 // .Type being null can happen in minidumps.  In that case we will fall back to
                 // hardcoded values and hope they don't get out of date.
-                if (_firstChar.Type == ErrorType)
+                if (_firstChar != null && _firstChar.Type == ErrorType)
                     _firstChar = null;
 
-                if (_stringLength.Type == ErrorType)
+                if (_stringLength != null && _stringLength.Type == ErrorType)
                     _stringLength = null;
 
                 _initializedStringFields = true;
